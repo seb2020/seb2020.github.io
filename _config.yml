@@ -79,9 +79,8 @@ analytics:
 author:
   name             : "Sebastien Girard"
   avatar           : "/assets/images/bio.jpg"
-  bio              : "[root@sgir]$ who am i
-                        Sebastien Girard"
-  location         : "Suisse"
+  bio              : "[sgir@mintbox]$ who am i"
+  location         : "Switzerland"
   email            :
   uri              :
   bitbucket        :
