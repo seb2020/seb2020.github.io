@@ -7,13 +7,13 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Minimal Mistakes"
+title                    : "Sebastien Girard"
 title_separator          : "-"
-name                     : &name "Michael Rose"
+name                     : &name "Sebastien Girard"
 description              : &description "A flexible Jekyll theme for your blog or site with a minimalist aesthetic."
-url                      : https://mmistakes.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/minimal-mistakes" # the subpath of your site, e.g. "/blog"
-repository               : "mmistakes/minimal-mistakes"
+url                      : https://seb2020.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "/blog" # the subpath of your site, e.g. "/blog"
+repository               : "seb2020/seb2020.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -55,9 +55,9 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter "mmistakes"
+  username               :
 facebook:
-  username               : &facebook "michaelrose"
+  username               :
   app_id                 :
   publisher              :
 og_image                 : "/assets/images/site-logo.png" # Open Graph/Twitter default site image
@@ -67,8 +67,6 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
-    - "https://twitter.com/mmistakes"
-    - "https://facebook.com/michaelrose"
 
 # Analytics
 analytics:
@@ -82,19 +80,19 @@ author:
   name             : *name
   avatar           : "/assets/images/michael-rose.jpg"
   bio              : "Just another boring, tattooed, time traveling, designer."
-  location         : "Buffalo, NY"
+  location         : Suisse"
   email            :
-  uri              : "https://mademistakes.com"
+  uri              : "https://www.sgir.ch"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         : *facebook
   foursquare       :
-  github           : "mmistakes"
+  github           : "seb2020"
   google_plus      :
   keybase          :
-  instagram        : "mmistakes"
+  instagram        :
   lastfm           :
   linkedin         :
   pinterest        :
