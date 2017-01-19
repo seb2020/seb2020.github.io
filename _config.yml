@@ -78,8 +78,8 @@ analytics:
 # Site Author
 author:
   name             : "Sebastien Girard"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
+  avatar           : "/assets/images/bio.jpg"
+  bio              : "Sysadmin."
   location         : "Suisse"
   email            :
   uri              :
