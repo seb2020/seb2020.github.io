@@ -11,9 +11,9 @@ title                    : "Web sgir"
 title_separator          : "-"
 name                     : "Sebastien Girard"
 description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://www.sgir.ch"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "seb2020/seb2020.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -79,7 +79,8 @@ analytics:
 author:
   name             : "Sebastien Girard"
   avatar           : "/assets/images/bio.jpg"
-  bio              : "Sysadmin."
+  bio              : "[root@sgir]$ who am i
+                        Sebastien Girard"
   location         : "Suisse"
   email            :
   uri              :
@@ -94,7 +95,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/in/girardsebastien"
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
