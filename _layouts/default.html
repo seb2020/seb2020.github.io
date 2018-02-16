@@ -1,28 +1,35 @@
 ---
+layout: compress
 ---
 
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+<!DOCTYPE html>
+<html lang="en">
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+{% include head.html %}
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+<body>
+    <!-- <div id="preload" class="preloader">
+    </div> -->
+      <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
+            {% if page.tag %}
+                <div class="post">
+            {% else %}
+                {% if showHeader != true %}
+                    <div class="page {{ page.title | downcase }}">
+                {% else %}
+                    <div class="{{ page.title | downcase }}">
+                {% endif %}
+            {% endif %}
 
-    {{ content }}
+                {{ content }}
+                    </div>
+                 </div>
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+    {% include icons.html %}
+
+    {% include analytics-google.html %}
+
+            </div>
     </div>
-
-    {% include scripts.html %}
-
-  </body>
+</body>
 </html>

@@ -1,0 +1,58 @@
+<nav class="{% if page.title == "Home" %}nav-home{% else %}nav{% endif %}">
+    <ul class="list">
+        {% if page.title != "Home" %}
+            <li class="item">
+                <a class="link" href="{{ site.url }}/">Home</a>
+            </li>
+            <span class="separator">|</span>
+        {% endif %}
+
+        {% if site.about == true %}
+            {% if page.title != "About" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/about">About</a>
+                </li>
+                <span class="separator">|</span>
+            {% endif %}
+        {% endif %}
+        {% if site.blog_external == true %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/archives">Archives</a>
+                </li>
+                <span class="separator">|</span>
+        {% endif %}
+
+        {% if site.blog == true %}
+            {% if page.title != "Blog" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/archives"1">Archives</a>
+                </li>
+                <span class="separator">|</span>
+            {% endif %}
+        {% endif %}
+
+        {% if site.projects == true %}
+            {% if page.title != "Projects" %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/projects" target="_blank">Projects</a>
+                </li>
+                <span class="separator">|</span>
+            {% endif %}
+        {% endif %}
+
+        {% if site.projects_external == true %}
+            {% if site.github %}
+                <li class="item">
+                    <a class="link" href="https://www.github.com/{{ site.github }}"  target="_blank">Projects</a>
+                </li>
+                <span class="separator">|</span>
+            {% endif %}
+        {% endif %}
+
+        {% if site.resume == true %}
+            <li class="item">
+                <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.url }}/{{ site.resume-url }}{% endif %}"  target="_blank">Résumé</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
