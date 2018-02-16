@@ -15,30 +15,6 @@
                 <span class="separator">|</span>
             {% endif %}
         {% endif %}
-        {% if site.blog_external == true %}
-                <li class="item">
-                    <a class="link" href="{{ site.url }}/archives">Archives</a>
-                </li>
-                <span class="separator">|</span>
-        {% endif %}
-
-        {% if site.blog == true %}
-            {% if page.title != "Blog" %}
-                <li class="item">
-                    <a class="link" href="{{ site.url }}/archives"1">Archives</a>
-                </li>
-                <span class="separator">|</span>
-            {% endif %}
-        {% endif %}
-
-        {% if site.projects == true %}
-            {% if page.title != "Projects" %}
-                <li class="item">
-                    <a class="link" href="{{ site.url }}/projects" target="_blank">Projects</a>
-                </li>
-                <span class="separator">|</span>
-            {% endif %}
-        {% endif %}
 
         {% if site.projects_external == true %}
             {% if site.github %}
