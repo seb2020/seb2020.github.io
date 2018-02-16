@@ -9,6 +9,7 @@ collections:
     title: Uploads
     output: true
 name: Girard Sebastien
+avatar: "/assets/images/bio.jpg"
 bio: System administrator
 description: Girard Sebastien's Personal website.
 permalink: "/:title/"
