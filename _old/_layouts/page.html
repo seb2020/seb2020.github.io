@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+{{content}}
+
+{% if page.home %}
+	{% include home-footer.html %}
+{% else %}
+	{% include footer.html %}
+{% endif %}

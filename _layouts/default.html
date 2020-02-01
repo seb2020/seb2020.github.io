@@ -1,35 +1,23 @@
----
-layout: compress
----
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-{% include head.html %}
+  {% include head.html %}
 
-<body>
-    <!-- <div id="preload" class="preloader">
-    </div> -->
-      <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
-            {% if page.tag %}
-                <div class="post">
-            {% else %}
-                {% if showHeader != true %}
-                    <div class="page {{ page.title | downcase }}">
-                {% else %}
-                    <div class="{{ page.title | downcase }}">
-                {% endif %}
-            {% endif %}
+  <body>
 
-                {{ content }}
-                    </div>
-                 </div>
+    {% include header.html %}
 
-    {% include icons.html %}
 
-    {% include analytics-google.html %}
-
-            </div>
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
     </div>
-</body>
+
+    {% include footer.html %}
+
+    {% include hemline.html %}
+
+  </body>
+
 </html>

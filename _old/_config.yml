@@ -1,0 +1,39 @@
+---
+title: Girard Sebastien
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+name: Girard Sebastien
+picture: "/assets/images/bio_crop_2020.png"
+bio: System administrator
+description: Girard Sebastien's Personal website.
+permalink: "/:title/"
+analytics-google:
+linkedin: "girardsebastien"
+stackoverflow: "4227703/seb2020"
+github: seb2020
+width: large
+about: true
+journey: true
+fundme: true
+projects_external: true
+blog_external: true
+read-time: false
+show-tags: false
+related: false
+post-advance-links:
+- archives
+show-author: false
+animation: true
+gems:
+- jekyll-seo-tag
+- jekyll-gist
+- jekyll-feed
+- jemoji
+jekyll-mentions:
+  base_url: https://github.com
