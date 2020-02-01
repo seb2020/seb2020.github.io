@@ -6,9 +6,9 @@ layout: page
 <img src="{{ site.picture }}" class="profile-pic">
 
 <p class="about-me">
-    <span class="salutation">Hey there! I'm Sebastien :smile:</span>
+    <span class="salutation">Hey there! I'm Sebastien</span>
     <br>
-    <br>
+    Currently living in Switzerland, almost 29 years old.
     <br>
     <br>
     <br>
