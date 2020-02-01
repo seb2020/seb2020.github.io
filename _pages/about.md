@@ -15,4 +15,4 @@ news: true
 social: true
 ---
 
-I am Sebastien Girard. 29 years old. Currently living in Switzerland but wainting to go to Mars.
+I am Sebastien Girard. 29 years old. Currently living in Switzerland but waiting to go to Mars.
