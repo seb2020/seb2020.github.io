@@ -1,54 +1,39 @@
-# Build settings
-permalink: /blog/:year/:title/
-markdown: kramdown
-highlighter: pygments
-plugins: [jekyll-paginate-v2]
-
-pagination:
-  enabled: true
-  per_page: 3
-  permalink: "/page/:num/"
-
-comments: true
-
-source: source
-destination: _site
-sass:
-  sass_dir: _sass
-  style: compressed # expanded
-
-# SEO settings
-title: end2end
-description: "A free Jekyll theme for download"
-keywords: "Jekyll, theme, free, download, SEO, blog, web"
-url: http://nandomoreira.me
-baseurl: "/end2end"
-
-google_analytics: UA-52446115-1
-repo: http://github.com/nandomoreirame/end2end
-disqus_shortname: "nandothemes"
-disqus_site_shortname: "nandothemes"
-
-# Author settings
-author:
-  name: Fernando Moreira
-  job: Frontend Engineer
-  bio: "Enthusiast performance, responsive design and usability, always looking for the best project and good coffee."
-  thumb: /images/author.jpg
-  email: nandomoreira.me@gmail.com
-  url: https://nandomoreira.me/
-  github: https://github.com/nandomoreirame
-  twitter: https://twitter.com/umdevux
-  facebook: https://facebook.com/umdevux
-  linkedin: https://linkedin.com/in/nandomoreirame
-
-# navbar pages
-navbar:
-  - slug: about
-    title: About
-  - slug: icons
-    title: Icons
-  - slug: blog
-    title: Blog
-
-exclude: ["config.rb", "src", "Gemfile", "Gemfile.lock", "package.json","README.md", "Rakefile"]
+---
+title: Girard Sebastien
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+name: Girard Sebastien
+picture: "/assets/images/bio_crop_2020.png"
+bio: System administrator
+description: Girard Sebastien's Personal website.
+permalink: "/:title/"
+analytics-google:
+linkedin: "girardsebastien"
+stackoverflow: "4227703/seb2020"
+github: seb2020
+width: large
+about: true
+journey: true
+fundme: true
+projects_external: true
+blog_external: true
+read-time: false
+show-tags: false
+related: false
+post-advance-links:
+- archives
+show-author: false
+animation: true
+gems:
+- jekyll-seo-tag
+- jekyll-gist
+- jekyll-feed
+- jemoji
+jekyll-mentions:
+  base_url: https://github.com
