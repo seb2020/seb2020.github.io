@@ -2,6 +2,8 @@
 layout: page
 permalink: /certifications/
 title: certifications
+nav: true
+nav_order: 2
 ---
 
 You can access my Credly profile with this link : [https://www.credly.com/users/sebastien-girard](https://www.credly.com/users/sebastien-girard){:target="_blank"}
