@@ -26,6 +26,6 @@ jobs:
       - name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2
         with:
-          source_repo_path: seb2020/seb2020.github.io
+          source_repo_path: alshedivat/al-folio
           upstream_branch: main
           pr_labels: <label1>,<label2>[,...] # defaults to template_sync
