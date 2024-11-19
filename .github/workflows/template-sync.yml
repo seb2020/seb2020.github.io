@@ -1,8 +1,9 @@
+name: template-sync
 
 on:
   # cronjob trigger
-  # schedule:
-  # - cron: "0 0 1 * *"
+  schedule:
+  - cron: "0 0 1 * *"
   # manual trigger
   workflow_dispatch:
 jobs:
@@ -25,6 +26,6 @@ jobs:
       - name: actions-template-sync
         uses: AndreasAugustin/actions-template-sync@v2
         with:
-          source_repo_path: <owner/repo>
-          upstream_branch: <target_branch> # defaults to main
+          source_repo_path: seb2020/seb2020.github.io
+          upstream_branch: main
           pr_labels: <label1>,<label2>[,...] # defaults to template_sync
