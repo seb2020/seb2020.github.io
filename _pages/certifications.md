@@ -4,6 +4,7 @@ permalink: /certifications/
 title: certifications
 nav: true
 nav_order: 2
+pretty_table: true
 ---
 
 You can access my Credly profile with this link : [https://www.credly.com/users/sebastien-girard](https://www.credly.com/users/sebastien-girard){:target="_blank"}
@@ -34,4 +35,3 @@ You can access my Credly profile with this link : [https://www.credly.com/users/
 | **16.07.2013** |                | Microsoft Certified Solutions Associate - Windows Server 2008                                                    | 9782118              | [https://www.credly.com/badges/63e9da82-c167-4770-ad67-05c1adee5200](https://www.credly.com/badges/63e9da82-c167-4770-ad67-05c1adee5200){:target="_blank"}  |
 | **29.05.2013** |                | Paessler Certified Monitoring Professional                                                                       |                      |                                                                     |
 | **25.03.2013** |                | A10 Certified Engineer for Application Delivery                                                                  | 137CH2D              |                                                                     |
-
