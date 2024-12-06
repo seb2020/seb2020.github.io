@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /certifications/
-title: Certifications
+title: certifications
 nav: true
 nav_order: 2
 pretty_table: true
@@ -13,7 +13,7 @@ You can access my Credly profile with this link : [https://www.credly.com/users/
 
 | **Date**       | **Expiration** | **Description**                                                                                                  | **Certification ID** | **Credly link**                                                     |
 |----------------|----------------|------------------------------------------------------------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
-| **04.12.2024** | 08.09.2025     | Red Hat Certified Engineer (RHCE)                                                                                | 190-053-702          | [https://www.credly.com/badges/5e63ed2b-aad2-45ad-8a3d-aa659e9ccba3/](https://www.credly.com/badges/5e63ed2b-aad2-45ad-8a3d-aa659e9ccba3/){:target="_blank"}  |
+| **04.12.2024** | 08.09.2027     | Red Hat Certified Engineer (RHCE)                                                                                | 190-053-702          | [https://www.credly.com/badges/5e63ed2b-aad2-45ad-8a3d-aa659e9ccba3/](https://www.credly.com/badges/5e63ed2b-aad2-45ad-8a3d-aa659e9ccba3/){:target="_blank"}  |
 | **19.10.2023** | 13.10.2026     | ITIL 4 Foundation                                                                                                |                      |   |
 | **08.09.2022** | 08.09.2025     | Red Hat Certified OpenShift Administrator                                                                        | 190-053-702          | [https://www.credly.com/badges/2502457d-db30-4d2f-bf02-d2e3746f9b11](https://www.credly.com/badges/2502457d-db30-4d2f-bf02-d2e3746f9b11){:target="_blank"}  |
 | **18.02.2021** | 18.02.2024     | PECB Certified ISO/IEC 27001 Lead Implementer                                                                    | ISLI1077696-2021-02  | [https://www.credly.com/badges/62823d95-83de-47a5-9741-efb53bed50dc](https://www.credly.com/badges/62823d95-83de-47a5-9741-efb53bed50dc){:target="_blank"}  |
