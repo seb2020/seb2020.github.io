@@ -23,7 +23,7 @@ encrypt_key = no
 distinguished_name = dn
 req_extensions = req_ext
 [ dn ]
-CN = *.<kafka-cluster>.xxxx.ch
+CN = *.<kafka-cluster>.domain.ch
 emailAddress = xxx@domain.ch
 O = My Company
 OU = IT
@@ -33,13 +33,13 @@ C = CH
 [ req_ext ]
 subjectAltName = @alt_names
 [ alt_names ]
-DNS.1 = *.<kafka-cluster>.xxxx.ch
+DNS.1 = *.<kafka-cluster>.domain.ch
 ```
 
 Generate the CSR:
 
 ```bash
-openssl req -new -out wildcard_subdomain_<kafka-cluster>.xxxx.ch.csr -keyout wildcard_subdomain_<kafka-cluster>.xxxx.ch.key -config wildcard_subdomain_<kafka-cluster>.xxxx.ch_<year>.conf
+openssl req -new -out wildcard_subdomain_<kafka-cluster>.domain.ch.csr -keyout wildcard_subdomain_<kafka-cluster>.domain.ch.key -config wildcard_subdomain_<kafka-cluster>.domain.ch_<year>.conf
 ```	
 
 Submit the request to your CA.
@@ -70,8 +70,6 @@ Update the certificat secret. The certificat must be the full chain. The old cer
 ```bash
 openssl pcs12 -export -in wildcard_subdomain_<kafka-cluster>.xxxx.ch_<year>_full.crt -nokeys -out ca.p12 -password pass:<PASSWORD> -caname ca.crt
 ```
-
-Mettre dans le secret les nouvelles valeurs et augmenter de 1 l'annotation "strimzi.io/ca-cert-generation"`
 
 Update the secret `<kafka-cluster>-cluster-ca-cert` and increase the annotation `strimzi.io/ca-cert-generation`.
 
