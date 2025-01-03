@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://www.sgir.ch/feed.xml" rel="self" type="application/atom+xml"/><link href="https://www.sgir.ch/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-12-06T13:16:58+00:00</updated><id>https://www.sgir.ch/feed.xml</id><title type="html">blank</title><subtitle>Personal blog. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">Enable CDC for Oracle</title><link href="https://www.sgir.ch/blog/2024/cdc-enable-oracle/" rel="alternate" type="text/html" title="Enable CDC for Oracle"/><published>2024-12-06T13:15:00+00:00</published><updated>2024-12-06T13:15:00+00:00</updated><id>https://www.sgir.ch/blog/2024/cdc-enable-oracle</id><content type="html" xml:base="https://www.sgir.ch/blog/2024/cdc-enable-oracle/"><![CDATA[<h2 id="enable-cdc-for-oracle">Enable CDC for Oracle</h2> <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">DATABASE</span> <span class="k">ADD</span> <span class="n">SUPPLEMENTAL</span> <span class="n">LOG</span> <span class="k">DATA</span><span class="p">;</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://www.sgir.ch/feed.xml" rel="self" type="application/atom+xml"/><link href="https://www.sgir.ch/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-01-03T13:35:36+00:00</updated><id>https://www.sgir.ch/feed.xml</id><title type="html">blank</title><subtitle>Personal blog. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">access a kafka topic with kafka-console-consumer</title><link href="https://www.sgir.ch/blog/2024/kafka-console-consumer/" rel="alternate" type="text/html" title="access a kafka topic with kafka-console-consumer"/><published>2024-12-06T13:20:00+00:00</published><updated>2024-12-06T13:20:00+00:00</updated><id>https://www.sgir.ch/blog/2024/kafka-console-consumer</id><content type="html" xml:base="https://www.sgir.ch/blog/2024/kafka-console-consumer/"><![CDATA[<h2 id="create-the-configuration-file">Create the configuration file</h2> <p>Create a file <code class="language-plaintext highlighter-rouge">consumer.properties</code> with:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssl.truststore.type<span class="o">=</span>PEM
+ssl.truststore.location<span class="o">=</span>&lt;certificat path&gt;.crt
+security.protocol<span class="o">=</span>SASL_SSL
+sasl.mechanism<span class="o">=</span>SCRAM-SHA-512
+sasl.jaas.config<span class="o">=</span>org.apache.kafka.common.security.scram.ScramLoginModule required <span class="nv">username</span><span class="o">=</span><span class="s2">"&lt;user&gt;"</span> <span class="nv">password</span><span class="o">=</span><span class="s2">"&lt;password&gt;"</span><span class="p">;</span>
+</code></pre></div></div> <p>Connect to the topic:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/kafka/kafka_2.13-3.6.2/bin/kafka-console-consumer.sh <span class="nt">--bootstrap-server</span> &lt;bootstrap-url&gt; <span class="nt">--consumer</span>.config consumer.properties <span class="nt">--topic</span> &lt;topic name&gt;
+</code></pre></div></div>]]></content><author><name></name></author><category term="kafka"/><category term="kakfa,"/><category term="tips"/><summary type="html"><![CDATA[How to access a Kafka Topic with kafka-console-consumer]]></summary></entry><entry><title type="html">Enable CDC for Oracle</title><link href="https://www.sgir.ch/blog/2024/cdc-enable-oracle/" rel="alternate" type="text/html" title="Enable CDC for Oracle"/><published>2024-12-06T13:15:00+00:00</published><updated>2024-12-06T13:15:00+00:00</updated><id>https://www.sgir.ch/blog/2024/cdc-enable-oracle</id><content type="html" xml:base="https://www.sgir.ch/blog/2024/cdc-enable-oracle/"><![CDATA[<h2 id="enable-cdc-for-oracle">Enable CDC for Oracle</h2> <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">DATABASE</span> <span class="k">ADD</span> <span class="n">SUPPLEMENTAL</span> <span class="n">LOG</span> <span class="k">DATA</span><span class="p">;</span>
  
 <span class="k">SELECT</span> <span class="n">supplemental_log_data_min</span> <span class="k">FROM</span> <span class="n">v</span><span class="err">$</span><span class="k">database</span><span class="p">;</span>
  
@@ -73,7 +79,78 @@
 <span class="nt">-dane_tlsa_rrdata</span> <span class="s2">"3 1 1 76BB66711DA416433CA890A5B2E5A0533C6006478F7D10A4469A947ACC8399E1"</span>
 </code></pre></div></div> <p>If the verification is successful, you will see something like this in the output:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SSL handshake has read 5209 bytes and written 433 bytes Verification: OK Verified peername: *.protonmail.ch DANE TLSA 3 1 1 ...8f7d10a4469a947acc8399e1 matched EE certificate at depth 0
 </code></pre></div></div> <p>If you’d like to test for validation failure, just break the supplied hash. The result will be similar to the following output:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SSL handshake has read 5209 bytes and written 433 bytes Verification error: No matching DANE TLSA records
-</code></pre></div></div>]]></content><author><name></name></author><category term="linux"/><category term="openssl"/><summary type="html"><![CDATA[Usefull openssl examples]]></summary></entry><entry><title type="html">Enable CDC for MariaDB</title><link href="https://www.sgir.ch/blog/2024/cdc-enable-mariadb/" rel="alternate" type="text/html" title="Enable CDC for MariaDB"/><published>2024-11-25T11:15:00+00:00</published><updated>2024-11-25T11:15:00+00:00</updated><id>https://www.sgir.ch/blog/2024/cdc-enable-mariadb</id><content type="html" xml:base="https://www.sgir.ch/blog/2024/cdc-enable-mariadb/"><![CDATA[<h2 id="enable-cdc-for-mariadb-with-galera">Enable CDC for MariaDB with Galera</h2> <p>Edit the file <code class="language-plaintext highlighter-rouge">/etc/my.cnf.d/server.cnf</code> and add the following:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mysqld]
+</code></pre></div></div>]]></content><author><name></name></author><category term="linux"/><category term="openssl"/><summary type="html"><![CDATA[Usefull openssl examples]]></summary></entry><entry><title type="html">How to change Kafka SSL certificat in OpenShift (AMQ Streams)</title><link href="https://www.sgir.ch/blog/2024/kafka-change-certificat/" rel="alternate" type="text/html" title="How to change Kafka SSL certificat in OpenShift (AMQ Streams)"/><published>2024-12-01T15:09:00+00:00</published><updated>2024-12-01T15:09:00+00:00</updated><id>https://www.sgir.ch/blog/2024/kafka-change-certificat</id><content type="html" xml:base="https://www.sgir.ch/blog/2024/kafka-change-certificat/"><![CDATA[<h2 id="generate-the-new-certificat">Generate the new certificat</h2> <p>Create the <code class="language-plaintext highlighter-rouge">wildcard_subdomain_&lt;kafka-cluster&gt;_&lt;year&gt;.conf</code>:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ req ]
+default_bits = 2048
+default_md = sha256
+prompt = no
+encrypt_key = no
+distinguished_name = dn
+req_extensions = req_ext
+[ dn ]
+CN = *.&lt;kafka-cluster&gt;.domain.ch
+emailAddress = xxx@domain.ch
+O = My Company
+OU = IT
+L = Rechy
+ST = Valais
+C = CH
+[ req_ext ]
+subjectAltName = @alt_names
+[ alt_names ]
+DNS.1 = *.&lt;kafka-cluster&gt;.domain.ch
+</code></pre></div></div> <p>Generate the CSR:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-new</span> <span class="nt">-out</span> wildcard_subdomain_&lt;kafka-cluster&gt;.domain.ch.csr <span class="nt">-keyout</span> wildcard_subdomain_&lt;kafka-cluster&gt;.domain.ch.key <span class="nt">-config</span> wildcard_subdomain_&lt;kafka-cluster&gt;.domain.ch_&lt;year&gt;.conf
+</code></pre></div></div> <p>Submit the request to your CA.</p> <h2 id="add-the-new-certificat">Add the new certificat</h2> <p>Disable reconciliation of Kafka cluster:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>oc annotate Kafka &lt;kafka-cluster&gt; strimzi.io/pause-reconciliation<span class="o">=</span><span class="s2">"true"</span>
+</code></pre></div></div> <p>Update the Kafka CRD to disable certificate management:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kafka.strimzi.io/v1beta2</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Kafka</span>
+<span class="c1"># ...</span>
+<span class="na">spec</span><span class="pi">:</span>
+<span class="c1"># ...</span>
+  <span class="na">clusterCa</span><span class="pi">:</span>
+    <span class="na">generateCertificateAuthority</span><span class="pi">:</span> <span class="kc">false</span>
+</code></pre></div></div> <p>Update the certificat secret. The certificat must be the full chain. The old certificat must be renamed with the date and the p12 must be regenerated with the following command:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl pcs12 <span class="nt">-export</span> <span class="nt">-in</span> wildcard_subdomain_&lt;kafka-cluster&gt;.xxxx.ch_&lt;year&gt;_full.crt <span class="nt">-nokeys</span> <span class="nt">-out</span> ca.p12 <span class="nt">-password</span> pass:&lt;PASSWORD&gt; <span class="nt">-caname</span> ca.crt
+</code></pre></div></div> <p>Update the secret <code class="language-plaintext highlighter-rouge">&lt;kafka-cluster&gt;-cluster-ca-cert</code> and increase the annotation <code class="language-plaintext highlighter-rouge">strimzi.io/ca-cert-generation</code>.</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kind</span><span class="pi">:</span> <span class="s">Secret</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">annotations</span><span class="pi">:</span>
+    <span class="na">strimzi.io/ca-cert-generation</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;kafka-cluster&gt;</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">amq-streams-kafka</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app.kubernetes.io/instance</span><span class="pi">:</span> <span class="s">&lt;kafka-cluster&gt;</span>
+    <span class="na">app.kubernetes.io/managed-by</span><span class="pi">:</span> <span class="s">strimzi-cluster-operator</span>
+    <span class="na">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">certificate-authority</span>
+    <span class="na">app.kubernetes.io/part-of</span><span class="pi">:</span> <span class="s">strimzi-&lt;kafka-cluster&gt;</span>
+    <span class="na">strimzi.io/cluster</span><span class="pi">:</span> <span class="s">&lt;kafka-cluster&gt;</span>
+    <span class="na">strimzi.io/component-type</span><span class="pi">:</span> <span class="s">certificate-authority</span>
+    <span class="na">strimzi.io/kind</span><span class="pi">:</span> <span class="s">Kafka</span>
+    <span class="na">strimzi.io/name</span><span class="pi">:</span> <span class="s">strimzi</span>
+<span class="na">data</span><span class="pi">:</span>
+  <span class="na">ca.crt</span><span class="pi">:</span> <span class="s">LS0tLS1CRUdJTiBDRVJUSUZJQ0FU...</span>
+  <span class="na">ca-2024-09-05T08-15-07Z.crt</span><span class="pi">:</span> <span class="s">LS0tLS1CRUdJTiBDRVJUSUZJQ0...</span>
+  <span class="na">ca.p12</span><span class="pi">:</span> <span class="s">MIIRJwIBAzCCEN0GCSqGSIb3DQEHAaCCEM4EghDKMI...</span>
+  <span class="na">ca.password</span><span class="pi">:</span> <span class="s">WVRLMFoyVDY2Mzc0</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">Opaque</span>
+</code></pre></div></div> <p>Update the secret <code class="language-plaintext highlighter-rouge">&lt;kafka-cluster&gt;-cluster-ca</code> and increase the annotation <code class="language-plaintext highlighter-rouge">strimzi.io/ca-key-generation</code>:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kind</span><span class="pi">:</span> <span class="s">Secret</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">annotations</span><span class="pi">:</span>
+    <span class="na">strimzi.io/ca-key-generation</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;kafka-cluster&gt;-cluster-ca</span>
+  <span class="na">namespace</span><span class="pi">:</span> <span class="s">amq-streams-kafka</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app.kubernetes.io/instance</span><span class="pi">:</span> <span class="s">&lt;kafka-cluster&gt;</span>
+    <span class="na">app.kubernetes.io/managed-by</span><span class="pi">:</span> <span class="s">strimzi-cluster-operator</span>
+    <span class="na">app.kubernetes.io/name</span><span class="pi">:</span> <span class="s">certificate-authority</span>
+    <span class="na">app.kubernetes.io/part-of</span><span class="pi">:</span> <span class="s">strimzi-&lt;kafka-cluster&gt;</span>
+    <span class="na">strimzi.io/cluster</span><span class="pi">:</span> <span class="s">&lt;kafka-cluster&gt;</span>
+    <span class="na">strimzi.io/component-type</span><span class="pi">:</span> <span class="s">certificate-authority</span>
+    <span class="na">strimzi.io/kind</span><span class="pi">:</span> <span class="s">Kafka</span>
+    <span class="na">strimzi.io/name</span><span class="pi">:</span> <span class="s">strimzi</span>
+<span class="na">data</span><span class="pi">:</span>
+  <span class="na">ca.key</span><span class="pi">:</span> <span class="s">LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV...</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">Opaque</span>
+</code></pre></div></div> <p>Enable the reconciliation of Kafka cluster:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>oc annotate Kafka &lt;kafka-cluster&gt; strimzi.io/pause-reconciliation-
+</code></pre></div></div>]]></content><author><name></name></author><category term="kafka"/><category term="kafka"/><summary type="html"><![CDATA[How to change Kafka SSL certificat in OpenShift (AMQ Streams) based on Strimzi]]></summary></entry><entry><title type="html">Enable CDC for MariaDB</title><link href="https://www.sgir.ch/blog/2024/cdc-enable-mariadb/" rel="alternate" type="text/html" title="Enable CDC for MariaDB"/><published>2024-11-25T11:15:00+00:00</published><updated>2024-11-25T11:15:00+00:00</updated><id>https://www.sgir.ch/blog/2024/cdc-enable-mariadb</id><content type="html" xml:base="https://www.sgir.ch/blog/2024/cdc-enable-mariadb/"><![CDATA[<h2 id="enable-cdc-for-mariadb-with-galera">Enable CDC for MariaDB with Galera</h2> <p>Edit the file <code class="language-plaintext highlighter-rouge">/etc/my.cnf.d/server.cnf</code> and add the following:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>mysqld]
 server-id         <span class="o">=</span> 1   <span class="c"># Querying variable is called server_id, e.g. SELECT variable_value FROM information_schema.global_variables WHERE variable_name='server_id';</span>
 log_bin                     <span class="o">=</span> mariadb-bin
 binlog_format               <span class="o">=</span> ROW
