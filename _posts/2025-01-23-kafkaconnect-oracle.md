@@ -1,8 +1,8 @@
 ---
 layout: post
-title: KakfaConnect PostgreSQL configuration
-date: 2025-01-03 14:35:00
-description: Debezium connector for PostgreSQL in Kafka OpenShift (AMQ Streams) based on Strimzi
+title: KakfaConnect Oracle configuration
+date: 2025-01-23 16:02:00
+description: Debezium connector for Oracle in Kafka OpenShift (AMQ Streams) based on Strimzi
 tags: kafka, debezium
 categories: kafka
 featured: false
@@ -10,11 +10,11 @@ toc:
   sidebar: left
 ---
 
-## Debezium connector for PostgreSQL
+## Debezium connector for Oracle
 
-The Debezium PostgreSQL connector captures row-level changes in the schemas of a PostgreSQL database
+Debezium’s Oracle connector captures and records row-level changes that occur in databases on an Oracle server, including tables that are added while the connector is running.
 
-Reference : https://debezium.io/documentation/reference/stable/connectors/postgresql.html
+Reference : https://debezium.io/documentation/reference/stable/connectors/oracle.html
 
 ## Deployment
 
@@ -22,35 +22,31 @@ Reference : https://debezium.io/documentation/reference/stable/connectors/postgr
 kind: KafkaConnector
 apiVersion: kafka.strimzi.io/v1beta2
 metadata:
-  name: kafka-connector-mydatabase-postgresql
+  name: kafka-connector-mydatabase-oracle
   labels:
     strimzi.io/cluster: kafka-cluster
   namespace: amq-streams-kafka
 spec:
- class: io.debezium.connector.postgresql.PostgresConnector
+  class: io.debezium.connector.oracle.OracleConnector
   tasksMax: 1
   config:
     database.hostname: mydatabase-sql.domain.lan
-    database.port: 5432
+    database.port: 1521
     database.user: debezium
     database.password: password
     database.dbname: mydatabase
-    database.sslmode: verify-full
-    database.sslrootcert: /opt/kafka/external-configuration/ca-bundle/ca-certificates.crt # internal PKI
-    table.include.list: public.table1
+    table.include.list: schema.table1
+    lob.enabled: true # For supporting CLOB/NCLOB column -> https://debezium.io/documentation//reference/2.7/connectors/oracle.html#oracle-property-lob-enabled
+    topic.creation.default.replication.factor: -1
+    topic.creation.default.partitions: -1
+    topic.creation.default.delete.retention.ms: 259200000
     topic.prefix: mydatabase
-    plugin.name: pgoutput
-    slot.name: permanent_logical_slot_mydatabase
-    publication.name: publication_mydatabase
-    publication.autocreate.mode: filtered
+    connect.keep.alive: true
     schema.history.internal.kafka.bootstrap.servers: kafka-cluster-kafka-bootstrap:9093
     schema.history.internal.kafka.topic: mydatabase.schemahistory
     config.providers: secrets,configmaps
     config.providers.configmaps.class: io.strimzi.kafka.KubernetesConfigMapConfigProvider
     config.providers.secrets.class: io.strimzi.kafka.KubernetesSecretConfigProvider
-    topic.creation.default.replication.factor: -1
-    topic.creation.default.partitions: -1
-    topic.creation.default.delete.retention.ms: 259200000
     schema.history.internal.producer.security.protocol: SASL_SSL
     schema.history.internal.producer.sasl.mechanism: SCRAM-SHA-512
     schema.history.internal.producer.ssl.truststore.type: PEM
