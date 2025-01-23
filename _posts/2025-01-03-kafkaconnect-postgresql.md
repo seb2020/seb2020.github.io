@@ -1,6 +1,6 @@
 ---
 layout: post
-title: KakfaConnect PostgreSQL configuration
+title: KafkaConnect PostgreSQL configuration
 date: 2025-01-03 14:35:00
 description: Debezium connector for PostgreSQL in Kafka OpenShift (AMQ Streams) based on Strimzi
 tags: kafka, debezium

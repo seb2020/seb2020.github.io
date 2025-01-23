@@ -1,6 +1,6 @@
 ---
 layout: post
-title: KakfaConnect Oracle configuration
+title: KafkaConnect Oracle configuration
 date: 2025-01-23 16:02:00
 description: Debezium connector for Oracle in Kafka OpenShift (AMQ Streams) based on Strimzi
 tags: kafka, debezium

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: KakfaConnect MariaDB configuration
+title: KafkaConnect MariaDB configuration
 date: 2025-01-01 14:13:00
 description: Debezium connector for MariaDB in Kafka OpenShift (AMQ Streams) based on Strimzi
 tags: kafka, debezium

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: KakfaConnect SQL Server configuration
+title: KafkaConnect SQL Server configuration
 date: 2025-01-02 14:27:00
 description: Debezium connector for SQL Server in Kafka OpenShift (AMQ Streams) based on Strimzi
 tags: kafka, debezium
